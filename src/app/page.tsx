@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { CreatePost } from "@/app/_components/create-post";
 import { api } from "@/trpc/server";
-
+import { PostList } from "@/app/_components/postlist";
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC", name: "T3" });
 
@@ -43,6 +43,7 @@ export default async function Home() {
         </div>
 
         <CrudShowcase />
+        <PostList />
       </div>
     </main>
   );
